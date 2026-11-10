@@ -1,14 +1,14 @@
-
 <?php
 
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
-    public function run(): void
+   public function run(): void
     {
         $adminPassword = env('NAMEERA_ADMIN_PASSWORD');
         $ownerPassword = env('NAMEERA_OWNER_PASSWORD');
