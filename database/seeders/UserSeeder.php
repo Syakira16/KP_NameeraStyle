@@ -8,19 +8,17 @@ use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
-    public function run(): void
+   public function run(): void
     {
-
         $admin = User::firstOrCreate(
             [
                 'email' => 'admin@nameera.com'
             ],
             [
                 'name' => 'Admin Nameera',
-                'password' => Hash::make('password123')
+                'password' => 'password123'
             ]
         );
-
 
         $owner = User::firstOrCreate(
             [
@@ -28,14 +26,12 @@ class UserSeeder extends Seeder
             ],
             [
                 'name' => 'Owner Nameera',
-                'password' => Hash::make('password123')
+                'password' => 'password123'
             ]
         );
-
 
         $admin->assignRole('admin');
 
         $owner->assignRole('owner');
-
     }
 }
