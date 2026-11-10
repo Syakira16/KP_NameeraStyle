@@ -25,7 +25,7 @@ class OrderSeeder extends Seeder
         // Angka acak tetap supaya hasil seeder selalu sama
         mt_srand(2026);
 
-        $csId        = DB::table('users')->where('role', 'admin')->value('id');
+        $csId        = DB::table('users')->where('email', 'cs@nameerastyle.test')->value('id');
         $customerIds = DB::table('customers')->orderBy('id')->pluck('id')->all();
         $products    = DB::table('products')->orderBy('id')->get(['id', 'harga'])->all();
 
